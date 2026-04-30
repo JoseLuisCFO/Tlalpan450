@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tlalpan 450 | Espacios Comerciales CDMX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --metro: #D94F1E;
+    --bg: #F7F5F1;
+    --bg-alt: #EDEAE4;
+    --bg-card: #FFFFFF;
+    --text: #111111;
+    --text-mid: #444444;
+    --text-muted: #888888;
+    --accent: #8B6B3D;
+    --border: rgba(0,0,0,0.1);
+    --border-strong: rgba(0,0,0,0.18);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    height: 68px;
+    background: rgba(247,245,241,0.96);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--metro); }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--metro); }
+
+  .nav-cta {
+    background: var(--metro) !important;
+    color: white !important;
+    padding: 0.45rem 1.2rem;
+    border-radius: 3px;
+    font-weight: 700 !important;
+  }
+
+  section { min-height: 100vh; }
+
+  #inicio {
+    display: flex;
+    flex-direction: column;
+    padding-top: 68px;
+    background: var(--bg);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 5rem 4rem;
+    width: 100%;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--metro);
+    font-weight: 700;
+    background: rgba(217,79,30,0.09);
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 4rem;
+    line-height: 1.0;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em { color: var(--metro); font-style: normal; }
+
+  .hero-desc {
+    color: var(--text-mid);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    max-width: 440px;
+    line-height: 1.8;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--metro);
+    color: white;
+    padding: 0.85rem 2rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-right: 1rem;
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    border: 1.5px solid var(--border-strong);
+    color: var(--text);
+    padding: 0.85rem 2rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--metro); color: var(--metro); }
+
+  .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: var(--bg-alt);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  .photo-icon {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--border-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.25rem;
+  }
+
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--border);
+    background: var(--bg-card);
+  }
+
+  .stat-item {
+    padding: 2rem 4rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--metro);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+  }
+
+  .features-strip {
+    background: var(--text);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .feature-item {
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--metro);
+  }
+
+  .feature-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+  }
+
+  .feature-desc {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  .section-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 4rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--metro);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+  }
+
+  h2 em { color: var(--metro); font-style: normal; }
+
+  #ubicacion { background: var(--bg-card); }
+
+  .ubicacion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .map-placeholder {
+    aspect-ratio: 1;
+    background: var(--bg-alt);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    gap: 0.5rem;
+    position: sticky;
+    top: 90px;
+    min-height: 420px;
+  }
+
+  .metro-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .metro-stat .big {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+    color: var(--metro);
+    line-height: 1;
+  }
+
+  .metro-stat .label {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    max-width: 160px;
+    line-height: 1.4;
+  }
+
+  .entorno-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin: 2.5rem 0 1rem;
+  }
+
+  .av-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+
+  .av-table td {
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-mid);
+  }
+
+  .av-table td:first-child { color: var(--text); font-weight: 700; }
+  .av-table td:last-child { text-align: right; color: var(--text-muted); }
+
+  .negocios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35rem;
+    margin-top: 0.75rem;
+  }
+
+  .negocio-pill {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.72rem;
+    color: var(--text-mid);
+    text-align: center;
+  }
+
+  #espacios { background: var(--bg); }
+
+  .espacios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .espacio-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .espacio-card:hover { border-color: var(--metro); }
+
+  .espacio-card.featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .espacio-img {
+    aspect-ratio: 4/3;
+    background: var(--bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .espacio-card.featured .espacio-img {
+    aspect-ratio: auto;
+    min-height: 200px;
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+  }
+
+  .espacio-info { padding: 1.25rem 1.5rem; }
+
+  .espacio-piso {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--metro);
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+
+  .espacio-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+    color: var(--text);
+  }
+
+  .espacio-metros {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--metro);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .espacio-metros span { font-size: 1rem; color: var(--text-muted); }
+
+  .espacio-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+
+  .badge {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: rgba(217,79,30,0.09);
+    color: var(--metro);
+    border: 1px solid rgba(217,79,30,0.25);
+    border-radius: 2px;
+    padding: 0.2rem 0.5rem;
+  }
+
+  #hablemos { background: var(--bg-alt); min-height: auto; }
+
+  .hablemos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .contact-form-area {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.5rem;
+  }
+
+  .form-group { margin-bottom: 1.25rem; }
+
+  .form-group label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border-strong);
+    border-radius: 3px;
+    padding: 0.7rem 1rem;
+    color: var(--text);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--metro); }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .contact-info { margin-bottom: 2.5rem; }
+
+  .contact-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    color: var(--text);
+  }
+
+  .contact-title {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-mid);
+  }
+
+  .contact-dot {
+    width: 6px; height: 6px;
+    background: var(--metro);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .metro-line-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .metro-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #E37B00;
+    border: 2px solid var(--text);
+    flex-shrink: 0;
+  }
+
+  footer {
+    background: var(--text);
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-logo span { color: var(--metro); }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+  .rule { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero-grid, .ubicacion-grid, .hablemos-grid { grid-template-columns: 1fr; }
+    .features-strip { grid-template-columns: 1fr 1fr; padding: 2rem 1.5rem; }
+    .espacios-grid { grid-template-columns: 1fr; }
+    .espacio-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+    .section-wrap { padding: 4rem 1.5rem; }
+    .hero-grid { padding: 3rem 1.5rem; }
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+    .stats-bar { grid-template-columns: 1fr; }
+    .stat-item { padding: 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#inicio" class="nav-logo">TLALPAN<span>450</span></a>
+  <ul class="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#ubicacion">Ubicación</a></li>
+    <li><a href="#espacios">Espacios</a></li>
+    <li><a href="#hablemos" class="nav-cta">Hablemos</a></li>
+  </ul>
+</nav>
+
+<section id="inicio">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-label">Calzada de Tlalpan 450, CDMX</div>
+      <h1>La opción que tu negocio <em>NECESITA</em></h1>
+      <p class="hero-desc">686 m² de construcción sobre 300 m² de terreno. Áreas comerciales diseñadas para operar, crecer y anunciarte de manera eficiente frente a la Estación Metro Viaducto.</p>
+      <a href="#espacios" class="btn-primary">Ver Espacios</a>
+      <a href="#hablemos" class="btn-secondary">Contáctanos</a>
+    </div>
+    <div>
+      <div class="metro-line-tag">
+        <div class="metro-dot"></div>
+        Metro Línea 2 &mdash; Estación Viaducto
+      </div>
+      <div class="photo-placeholder">
+        <div class="photo-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        Foto fachada del inmueble
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">686<span style="font-size:1.2rem">m²</span></div>
+      <div class="stat-label">Total Construcción</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">600K</div>
+      <div class="stat-label">Pasajeros diarios Línea 2</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">7</div>
+      <div class="stat-label">Espacios Disponibles</div>
+    </div>
+  </div>
+</section>
+
+<div class="features-strip">
+  <div class="feature-item">
+    <div class="feature-title">Visibilidad Metro</div>
+    <div class="feature-desc">Vista frontal hacia usuarios de la Línea 2 dirección sur a norte. Publicidad sin costo adicional.</div>
+  </div>
+  <div class="feature-item">
+    <div class="feature-title">Cámaras y Fibra Óptica</div>
+    <div class="feature-desc">Monitoreo constante en áreas comunes y exteriores. Capacidad para conexión con los principales proveedores.</div>
+  </div>
+  <div class="feature-item">
+    <div class="feature-title">Exclusividad de Giro</div>
+    <div class="feature-desc">Un giro por inquilino. Buscamos negocios complementarios que no se contrapongan entre sí.</div>
+  </div>
+  <div class="feature-item">
+    <div class="feature-title">Transporte Inmediato</div>
+    <div class="feature-desc">Acceso directo a Metro, Metrobús y principales avenidas de la CDMX.</div>
+  </div>
+</div>
+
+<section id="ubicacion">
+  <div class="section-wrap">
+    <div class="section-label">Ubicación</div>
+    <h2>La ubicación <em>perfecta</em></h2>
+    <div class="ubicacion-grid">
+      <div>
+        <p style="color:var(--text-mid); margin-bottom:2rem;">Frente a la estación Metro Viaducto, a minutos del centro de la CDMX. Anuncia y promueve tu negocio directamente a la mayor parte de la población activa de la ciudad.</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:2.5rem;">
+          <div class="metro-stat">
+            <div class="big">600K</div>
+            <div class="label">pasajeros diarios Línea 2</div>
+          </div>
+          <div class="metro-stat">
+            <div class="big">4K</div>
+            <div class="label">entradas diarias estación Viaducto</div>
+          </div>
+        </div>
+        <p style="font-size:0.83rem; color:var(--text-mid); margin-bottom:2.5rem; padding-left:1rem; border-left:3px solid var(--metro);">La Línea 2 conecta Tasqueña (sur) con Cuatro Caminos (norte), cruzando el corazón de la CDMX. Tu negocio frente a este flujo es publicidad constante, sin mensualidades.</p>
+        <div class="entorno-label">Avenidas Principales</div>
+        <table class="av-table">
+          <tr><td>Calzada de Tlalpan</td><td>0 km</td></tr>
+          <tr><td>Viaducto Río de la Piedad</td><td>200 m</td></tr>
+          <tr><td>Calle Coruña</td><td>30 m</td></tr>
+          <tr><td>Calle Santa Anita</td><td>50 m</td></tr>
+          <tr><td>Obrero Mundial</td><td>200 m</td></tr>
+          <tr><td>Avenida Xola</td><td>1 km</td></tr>
+          <tr><td>Calzada Chabacano</td><td>1 km</td></tr>
+        </table>
+        <div class="entorno-label">Negocios y Bancos en la Zona</div>
+        <div class="negocios-grid">
+          <div class="negocio-pill">HSBC</div>
+          <div class="negocio-pill">BBVA</div>
+          <div class="negocio-pill">Santander</div>
+          <div class="negocio-pill">Scotiabank</div>
+          <div class="negocio-pill">Inbursa</div>
+          <div class="negocio-pill">Banco Azteca</div>
+          <div class="negocio-pill">Vips</div>
+          <div class="negocio-pill">Toks</div>
+          <div class="negocio-pill">Little Caesars</div>
+          <div class="negocio-pill">Oxxo</div>
+          <div class="negocio-pill">7 Eleven</div>
+          <div class="negocio-pill">Coppel</div>
+          <div class="negocio-pill">Far. Ahorro</div>
+          <div class="negocio-pill">Far. Similares</div>
+          <div class="negocio-pill">Pemex</div>
+          <div class="negocio-pill">Julio</div>
+          <div class="negocio-pill">U. Insurgentes</div>
+        </div>
+      </div>
+      <div>
+        <div class="map-placeholder">
+          <div class="photo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          Mapa Google / Foto exterior
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.5rem;">
+          <div class="photo-placeholder" style="aspect-ratio:3/2;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Foto zona
+          </div>
+          <div class="photo-placeholder" style="aspect-ratio:3/2;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Foto metro
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="espacios">
+  <div class="section-wrap">
+    <div class="section-label">Espacios</div>
+    <h2>Comodidad, inspiración y <em>flexibilidad</em></h2>
+    <div style="max-width:600px; margin-bottom:3.5rem;">
+      <p style="color:var(--text-mid);">Cada espacio cuenta con anuncio frontal visible desde la Línea 2 del Metro. Elige el nivel y metraje que mejor se adapte a tu operación.</p>
+    </div>
+    <div class="espacios-grid">
+
+      <div class="espacio-card featured">
+        <div class="espacio-img">
+          <div style="text-align:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:block;margin:auto auto 6px;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <div style="font-size:0.75rem;">Foto espacio</div>
+          </div>
+        </div>
+        <div class="espacio-info" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="espacio-piso">Planta Baja — Local 1</div>
+          <div class="espacio-name">PB Frontal</div>
+          <div class="espacio-metros">124 <span>m²</span></div>
+          <div class="espacio-desc">8 metros de frente a la calle con anuncio frontal hacia usuarios del Metro Viaducto. Incluye medio baño.</div>
+        </div>
+      </div>
+
+      <div class="espacio-card">
+        <div class="espacio-img">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <div class="espacio-info">
+          <div class="espacio-piso">Planta Baja — Local 2</div>
+          <div class="espacio-name">PB Interior</div>
+          <div class="espacio-metros">151 <span>m²</span></div>
+          <div class="espacio-desc">Interior con anuncio frontal hacia el Metro. Incluye medio baño.</div>
+        </div>
+      </div>
+
+      <div class="espacio-card">
+        <div class="espacio-img">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <div class="espacio-info">
+          <div class="espacio-piso">Primer Piso</div>
+          <div class="espacio-name">Piso 1</div>
+          <div class="espacio-metros">91 <span>m²</span></div>
+          <div class="espacio-desc">Anuncio frontal hacia el Metro. Incluye medio baño.</div>
+        </div>
+      </div>
+
+      <div class="espacio-card">
+        <div class="espacio-img">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <div class="espacio-info">
+          <div class="espacio-piso">Segundo Piso</div>
+          <div class="espacio-name">Piso 2</div>
+          <div class="espacio-metros">91 <span>m²</span></div>
+          <div class="espacio-desc">Anuncio frontal hacia el Metro. Incluye medio baño.</div>
+        </div>
+      </div>
+
+      <div class="espacio-card">
+        <div class="espacio-img">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <div class="espacio-info">
+          <div class="espacio-piso">Tercer Piso — 3A</div>
+          <div class="espacio-name">Oficina Grande</div>
+          <div class="espacio-metros">94 <span>m²</span></div>
+          <div class="espacio-desc">Anuncio frontal. Incluye medio baño. Ideal para oficina.</div>
+          <div class="badge">Disponible</div>
+        </div>
+      </div>
+
+      <div class="espacio-card">
+        <div class="espacio-img">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <div class="espacio-info">
+          <div class="espacio-piso">Tercer Piso — 3B</div>
+          <div class="espacio-name">Local Compacto</div>
+          <div class="espacio-metros">60 <span>m²</span></div>
+          <div class="espacio-desc">Anuncio frontal hacia usuarios del Metro Viaducto.</div>
+        </div>
+      </div>
+
+      <div class="espacio-card">
+        <div class="espacio-img">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <div class="espacio-info">
+          <div class="espacio-piso">Tercer Piso — 3C</div>
+          <div class="espacio-name">Oficina Chica</div>
+          <div class="espacio-metros">75 <span>m²</span></div>
+          <div class="espacio-desc">Anuncio frontal. Incluye medio baño. Ideal para oficina pequeña.</div>
+          <div class="badge">Disponible</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="hablemos">
+  <div class="section-wrap" style="padding-bottom:6rem;">
+    <div class="section-label">Contacto</div>
+    <h2><em>Hablemos</em></h2>
+    <div class="hablemos-grid">
+      <div>
+        <p style="color:var(--text-mid); margin-bottom:2.5rem;">Encuentra el espacio ideal para tu negocio. Descubre cómo Tlalpan 450 puede impulsar tu crecimiento.</p>
+        <div class="contact-info">
+          <div class="contact-name">Ing. Arturo Espejo Galván</div>
+          <div class="contact-title">Administrador Operativo</div>
+          <div class="contact-row"><div class="contact-dot"></div><span>jlap6@icloud.com</span></div>
+          <div class="contact-row"><div class="contact-dot"></div><span>55.5191.9920</span></div>
+          <div class="contact-row"><div class="contact-dot"></div><span>Calzada de Tlalpan 450, Col. Viaducto Piedad, Iztacalco, CDMX</span></div>
+        </div>
+        <div class="photo-placeholder" style="aspect-ratio:16/9; border-radius:4px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          Foto del edificio / equipo
+        </div>
+      </div>
+      <div class="contact-form-area">
+        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1.5rem;color:var(--text);">Escríbenos</p>
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" placeholder="Tu nombre completo">
+        </div>
+        <div class="form-group">
+          <label>Empresa / Negocio</label>
+          <input type="text" placeholder="Nombre de tu empresa">
+        </div>
+        <div class="form-group">
+          <label>Correo Electrónico</label>
+          <input type="email" placeholder="correo@empresa.com">
+        </div>
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="tel" placeholder="55 XXXX XXXX">
+        </div>
+        <div class="form-group">
+          <label>Espacio de Interés</label>
+          <select>
+            <option value="">Selecciona un espacio...</option>
+            <option>PB Local 1 — 124 m²</option>
+            <option>PB Local 2 — 151 m²</option>
+            <option>Piso 1 — 91 m²</option>
+            <option>Piso 2 — 91 m²</option>
+            <option>Piso 3A — 94 m² (Disponible)</option>
+            <option>Piso 3B — 60 m²</option>
+            <option>Piso 3C — 75 m² (Disponible)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea placeholder="Cuéntanos sobre tu negocio y qué espacio necesitas..."></textarea>
+        </div>
+        <a href="mailto:jlap6@icloud.com" class="btn-primary" style="display:block;text-align:center;margin-top:0.5rem;">Enviar Mensaje</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">TLALPAN<span>450</span></div>
+  <div class="footer-copy">© 2025 Tlalpan 450 · Calzada de Tlalpan 450, Col. Viaducto Piedad, CDMX</div>
+</footer>
+
+</body>
+</html>
