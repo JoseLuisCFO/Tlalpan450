@@ -20,7 +20,7 @@
 <meta name="twitter:title" content="Espacios comerciales frente al Metro Viaducto, CDMX | Tlalpan 450">
 <meta name="twitter:description" content="Para consultorios, escuelas, despachos y oficinas, a 4 estaciones del Zócalo. Espectacular hacia la Línea 2 del Metro.">
 <meta name="twitter:image" content="https://tlalpan450.com/images/Tlalpan450-MetroViaducto-FachadaEspectacular.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232e3a66'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='%23C9A24A'%3E450%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232e3a66'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='%23FFDE21'%3E450%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet">
@@ -49,8 +49,8 @@
 :root{
   --navy:#2e3a66;
   --navy-deep:#1d2547;
-  --gold:#C9A24A;
-  --gold-soft:#E6D3A0;
+  --gold:#FFDE21;
+  --gold-soft:#FFEE8A;
   --paper:#F7F5F0;
   --ink:#1F2430;
   --muted:#5a6072;
@@ -88,7 +88,7 @@ a{color:inherit}
   text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:inherit;line-height:1.2
 }
 .btn-gold{background:var(--gold);color:var(--navy-deep)}
-.btn-gold:hover{background:#d8b45e}
+.btn-gold:hover{background:#F2CC00}
 .btn-line{border-color:rgba(255,255,255,.55);color:var(--white)}
 .btn-line:hover{border-color:var(--white)}
 .btn-wa{background:var(--wa);color:var(--white)}
@@ -114,7 +114,7 @@ a{color:inherit}
 .hero p.lead{font-size:1.2rem;color:#dfe3f1;max-width:34ch;margin:0 0 30px}
 .hero .actions{display:flex;flex-wrap:wrap;gap:14px}
 .hero-photo{position:relative;align-self:end}
-.hero-photo img{width:100%;height:520px;object-fit:cover;object-position:center 30%;border-radius:10px 10px 0 0}
+.hero-photo img{width:100%;height:auto;border-radius:10px 10px 0 0}
 .hero-photo figcaption{position:absolute;left:14px;bottom:14px;background:rgba(29,37,71,.88);color:#fff;font-size:.85rem;padding:6px 12px;border-radius:4px}
 
 /* Metro sign strip: the one bold element */
@@ -132,7 +132,6 @@ a{color:inherit}
 .fact strong{display:block;color:var(--gold);font-size:1.7rem;font-weight:800;font-stretch:110%;margin-bottom:4px}
 @media (max-width:920px){
   .hero-grid{grid-template-columns:1fr;padding-top:44px;gap:32px}
-  .hero-photo img{height:360px}
   .sign{border-right:0;margin-right:0;width:100%;border-bottom:1px solid rgba(255,255,255,.14)}
   .fact{flex:1 1 45%;border-right:0;padding:16px 12px 16px 0}
 }
@@ -262,7 +261,7 @@ footer li{margin-bottom:6px}
 .wa-float svg{width:32px;height:32px}
 
 /* v2 additions */
-.hero-photo img{object-position:center 20%}
+
 .contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
 .ccard{display:flex;flex-direction:column;align-items:flex-start;gap:14px;background:var(--white);border:1px solid var(--line);border-radius:10px;padding:28px;text-decoration:none;color:var(--ink);transition:border-color .15s}
 .ccard:hover{border-color:var(--navy)}
@@ -349,7 +348,7 @@ footer li{margin-bottom:6px}
       <p class="lead">Para consultorios, escuelas, despachos y oficinas, a 4 estaciones del Zócalo. Tus clientes llegan en Metro y ven tu marca desde el andén.</p>
       <div class="actions">
         <a class="btn btn-gold" href="#espacios">Ver espacios disponibles</a>
-        <a class="btn btn-line" href="https://wa.me/525551919920?text=Hola%2C%20quiero%20agendar%20una%20visita%20a%20Tlalpan%20450" target="_blank" rel="noopener">Agendar visita</a>
+        <a class="btn btn-line" href="https://wa.me/525551919920?text=Hola%2C%20quiero%20agendar%20una%20visita%20a%20Tlalpan%20450" target="_blank" rel="noopener">Visítanos</a>
       </div>
     </div>
     <figure class="hero-photo" style="margin:0">
@@ -409,7 +408,7 @@ footer li{margin-bottom:6px}
     </div>
 
     <div class="sign-block">
-      <img src="images/Tlalpan450-MetroViaducto-Espectacular.jpg" alt="Parte alta de la fachada de Tlalpan 450 con espectacular de gran formato visible desde el Metro Viaducto" width="1000" height="397" loading="lazy">
+      <img src="images/Tlalpan450-MetroViaducto-Estacion.jpg" alt="Estación Viaducto de la Línea 2 del Metro, con vista hacia el edificio Tlalpan 450" width="646" height="509" loading="lazy">
       <div>
         <h3>Tu marca, frente a la Línea 2</h3>
         <p style="color:var(--muted);margin:0 0 14px">La parte alta de la fachada mira directo a la estación. Es publicidad que trabaja todo el día, todos los días.</p>
@@ -512,7 +511,7 @@ footer li{margin-bottom:6px}
       </article>
     </div>
 
-    <h3>Todos los espacios del edificio</h3>
+    <h3>Espacios</h3>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Espacio</th><th>Ubicación</th><th>Superficie</th><th>Estado</th></tr></thead>
@@ -546,7 +545,7 @@ footer li{margin-bottom:6px}
         <li>Los espacios remodelados por piso</li>
         <li>El movimiento de la zona</li>
       </ul>
-      <a class="btn btn-gold" href="https://wa.me/525551919920?text=Hola%2C%20vi%20el%20video%20y%20quiero%20agendar%20una%20visita%20a%20Tlalpan%20450" target="_blank" rel="noopener">Agendar visita</a>
+      <a class="btn btn-gold" href="https://wa.me/525551919920?text=Hola%2C%20vi%20el%20video%20y%20quiero%20agendar%20una%20visita%20a%20Tlalpan%20450" target="_blank" rel="noopener">Visítanos</a>
     </div>
   </div>
 </section>
@@ -591,7 +590,7 @@ footer li{margin-bottom:6px}
 <section id="administracion">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Un edificio bien administrado</h2>
+      <h2>Conoce a nuestro equipo</h2>
       <p>Tienes a quién llamar. Administración y mantenimiento están al pendiente del inmueble y de cada inquilino.</p>
     </div>
     <div class="team">
@@ -616,7 +615,7 @@ footer li{margin-bottom:6px}
   <div class="wrap">
     <div class="inv-box">
       <div>
-        <h2>Relación con inversionistas</h2>
+        <h2>Inversionistas</h2>
         <p>Tlalpan 450 es un inmueble comercial con administración profesional, sobre uno de los corredores más transitados de la Ciudad de México, a 4 estaciones del Zócalo.</p>
         <p>Recibimos a inversionistas, fondos y desarrolladores interesados en alianzas o coinversión en activos con ingresos por renta y potencial de crecimiento.</p>
         <div class="actions">
@@ -639,7 +638,7 @@ footer li{margin-bottom:6px}
 <section id="contacto" style="background:var(--white)">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Agenda tu visita</h2>
+      <h2>Conócenos</h2>
       <p>Escríbenos o llámanos. Te respondemos el mismo día hábil.</p>
     </div>
 
@@ -700,7 +699,7 @@ footer li{margin-bottom:6px}
           <li><a href="#espacios">Espacios disponibles</a></li>
           <li><a href="#recorrido">Recorrido en video</a></li>
           <li><a href="#inquilinos">Inquilinos</a></li>
-          <li><a href="#inversionistas">Relación con inversionistas</a></li>
+          <li><a href="#inversionistas">Inversionistas</a></li>
         </ul>
       </div>
       <div>
